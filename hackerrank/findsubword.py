@@ -1,6 +1,12 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+
+file = open("files/findsubword.txt")
+
+inp = file.read()
+
+inp = inp.split("\n")
 import re, sys
-inp = sys.stdin.read().split("\n")
+# inp = sys.stdin.read().split("\n")
 cont = False
 queries = []
 phrases = []
@@ -20,7 +26,11 @@ foundlst = []
 for querie in queries:
     for phrase in phrases:
         found += len(re.findall("[A-Za-z]+"+querie+"[A-Za-z]+",phrase))
-    foundlst.append(found)
+    if found > 0:
+        foundlst.append(found)
 
 for num in foundlst:
+    pass
     print(num)
+
+file.close()
