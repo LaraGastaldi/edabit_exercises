@@ -26,8 +26,7 @@ foundlst = []
 for querie in queries:
     for phrase in phrases:
         found += len(re.findall("[A-Za-z]+"+querie+"[A-Za-z]+",phrase))
-    if found > 0:
-        foundlst.append(found)
+    foundlst.append(found)
 
 for num in foundlst:
     pass
